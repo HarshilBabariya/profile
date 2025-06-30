@@ -143,8 +143,8 @@ const Index = () => {
         }}
       />
 
-      {/* Enhanced Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/5 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/5 backdrop-blur-xl border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold text-white bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
@@ -155,16 +155,11 @@ const Index = () => {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize relative px-4 py-2 rounded-full transition-all duration-300 hover:scale-110 ${
-                    activeSection === section 
-                      ? 'text-blue-400 bg-white/10 shadow-lg shadow-blue-400/20' 
-                      : 'text-white/80 hover:text-blue-400 hover:bg-white/5'
+                  className={`capitalize transition-colors ${
+                    activeSection === section ? 'text-blue-400' : 'text-white/80 hover:text-blue-400'
                   }`}
                 >
                   {section === 'hero' ? 'Home' : section}
-                  {activeSection === section && (
-                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-400 rounded-full"></div>
-                  )}
                 </button>
               ))}
             </div>
@@ -172,116 +167,93 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Enhanced Hero Section */}
+      {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
-        <div className={`container mx-auto px-6 text-center relative z-10 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="mb-8">
-            <div className="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 animate-pulse hover:animate-bounce transition-all duration-300 cursor-pointer">
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center hover:bg-slate-800 transition-colors">
-                <User className="w-20 h-20 text-white" />
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className={`transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+            <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
+                <User className="w-16 h-16 text-white" />
               </div>
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 animate-fade-in hover:scale-105 transition-transform duration-500">
-              John <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">Developer</span>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              John <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Developer</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 mb-8 animate-fade-in delay-300 hover:text-white transition-colors">
+            <p className="text-xl md:text-2xl text-white/90 mb-8">
               Full-Stack Developer & UI/UX Enthusiast
             </p>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto mb-12 animate-fade-in delay-500 hover:text-white/80 transition-colors">
+            <p className="text-lg text-white/70 max-w-2xl mx-auto mb-12">
               Passionate about creating innovative web solutions that combine beautiful design with powerful functionality. 
               Let's build something amazing together!
             </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <Button 
-              size="lg" 
-              onClick={() => scrollToSection('projects')}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40"
-            >
-              View My Work
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={() => scrollToSection('contact')}
-              className="border-white/30 text-white hover:bg-white/10 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl hover:border-white/50"
-            >
-              Get In Touch
-            </Button>
-            <Button 
-              size="lg" 
-              variant="ghost"
-              className="text-white hover:bg-white/10 transform hover:scale-110 transition-all duration-300"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Download CV
-            </Button>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Button size="lg" onClick={() => scrollToSection('projects')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                View My Work
+              </Button>
+              <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')} className="border-white/30 text-white hover:bg-white/10">
+                Get In Touch
+              </Button>
+              <Button size="lg" variant="ghost" className="text-white hover:bg-white/10">
+                <Download className="w-5 h-5 mr-2" />
+                Download CV
+              </Button>
+            </div>
           </div>
         </div>
         
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onClick={() => scrollToSection('about')}>
-          <ChevronDown className="w-8 h-8 text-white/60 hover:text-white transition-colors" />
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" onClick={() => scrollToSection('about')}>
+          <ChevronDown className="w-8 h-8 text-white/60 cursor-pointer" />
         </div>
       </section>
 
-      {/* Enhanced About Section */}
+      {/* About Section */}
       <section id="about" className="py-20 bg-white/5 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl font-bold text-center text-white mb-20 hover:scale-105 transition-transform duration-300">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Me</span>
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
-              <div className="space-y-8">
-                <p className="text-xl text-white/80 leading-relaxed hover:text-white transition-colors duration-300">
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+              <div className="space-y-6">
+                <p className="text-lg text-white/80 leading-relaxed">
                   I'm a passionate full-stack developer with 5+ years of experience creating digital solutions that make a difference. 
                   I specialize in modern web technologies and love turning complex problems into simple, beautiful designs.
                 </p>
-                <p className="text-xl text-white/80 leading-relaxed hover:text-white transition-colors duration-300">
+                <p className="text-lg text-white/80 leading-relaxed">
                   When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
                   or sharing knowledge with the developer community.
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4 group cursor-pointer">
-                    <Award className="w-8 h-8 text-blue-400 group-hover:scale-110 transition-transform" />
-                    <span className="text-white text-lg group-hover:text-blue-400 transition-colors">5+ Years Experience</span>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <Award className="w-6 h-6 text-blue-400" />
+                    <span className="text-white">5+ Years Experience</span>
                   </div>
-                  <div className="flex items-center space-x-4 group cursor-pointer">
-                    <Code className="w-8 h-8 text-purple-400 group-hover:scale-110 transition-transform" />
-                    <span className="text-white text-lg group-hover:text-purple-400 transition-colors">50+ Projects Completed</span>
+                  <div className="flex items-center space-x-3">
+                    <Code className="w-6 h-6 text-purple-400" />
+                    <span className="text-white">50+ Projects Completed</span>
                   </div>
-                  <div className="flex items-center space-x-4 group cursor-pointer">
-                    <Phone className="w-8 h-8 text-pink-400 group-hover:scale-110 transition-transform" />
-                    <span className="text-white text-lg group-hover:text-pink-400 transition-colors">Available for Freelance</span>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-6 h-6 text-pink-400" />
+                    <span className="text-white">Available for Freelance</span>
                   </div>
                 </div>
               </div>
               
-              <div className="relative group">
-                <div className="w-full h-96 mx-auto rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10 flex items-center justify-center transform group-hover:scale-105 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-blue-500/20">
-                  <Briefcase className="w-32 h-32 text-white/60 group-hover:text-white transition-colors duration-300" />
-                </div>
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+              <div className="w-full h-80 mx-auto rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                <Briefcase className="w-24 h-24 text-white/60" />
               </div>
             </div>
 
-            {/* Enhanced Skills */}
+            {/* Skills */}
             <div className="text-center">
-              <h3 className="text-3xl font-semibold text-white mb-12 hover:scale-105 transition-transform duration-300">Skills & Technologies</h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                {skills.map((skill, index) => (
-                  <Badge 
-                    key={skill} 
-                    variant="secondary" 
-                    className="bg-white/10 text-white border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:shadow-lg cursor-pointer text-lg py-2 px-4"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
+              <h3 className="text-2xl font-semibold text-white mb-8">Skills & Technologies</h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {skills.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="bg-white/10 text-white border-white/20 hover:bg-white/20 transition-colors">
                     {skill}
                   </Badge>
                 ))}
@@ -291,43 +263,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Experience Section */}
+      {/* Experience Section */}
       <section id="experience" className="py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl font-bold text-center text-white mb-20 hover:scale-105 transition-transform duration-300">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">
               Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Experience</span>
             </h2>
             
-            <div className="space-y-12">
-              {experiences.map((exp, index) => (
-                <Card 
-                  key={exp.title} 
-                  className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 animate-fade-in group hover:shadow-2xl hover:shadow-blue-500/10"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <CardHeader className="group-hover:bg-white/5 transition-colors duration-300">
+            <div className="space-y-8">
+              {experiences.map((exp) => (
+                <Card key={exp.title} className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
+                  <CardHeader>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                      <CardTitle className="text-white text-2xl group-hover:text-blue-400 transition-colors duration-300">{exp.title}</CardTitle>
-                      <div className="flex items-center text-blue-400 mt-2 md:mt-0 group-hover:scale-110 transition-transform duration-300">
-                        <Calendar className="w-5 h-5 mr-2" />
-                        <span className="text-base font-medium">{exp.period}</span>
+                      <CardTitle className="text-white text-xl">{exp.title}</CardTitle>
+                      <div className="flex items-center text-blue-400 mt-2 md:mt-0">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        <span className="text-sm">{exp.period}</span>
                       </div>
                     </div>
-                    <div className="flex items-center text-white/80 mb-3 group-hover:text-white transition-colors">
-                      <Briefcase className="w-5 h-5 mr-3 text-purple-400" />
-                      <span className="font-semibold text-lg">{exp.company}</span>
+                    <div className="flex items-center text-white/80 mb-2">
+                      <Briefcase className="w-4 h-4 mr-2 text-purple-400" />
+                      <span className="font-semibold">{exp.company}</span>
                     </div>
-                    <div className="flex items-center text-white/60 group-hover:text-white/80 transition-colors">
-                      <MapPin className="w-5 h-5 mr-3" />
+                    <div className="flex items-center text-white/60">
+                      <MapPin className="w-4 h-4 mr-2" />
                       <span>{exp.location}</span>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-white/80 mb-6 leading-relaxed text-lg group-hover:text-white transition-colors duration-300">{exp.description}</p>
-                    <div className="flex flex-wrap gap-3">
+                    <p className="text-white/80 mb-4 leading-relaxed">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-400/10 transition-all duration-300 hover:scale-110 cursor-pointer">
+                        <Badge key={tech} variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-400/10 transition-colors">
                           {tech}
                         </Badge>
                       ))}
@@ -340,45 +308,41 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Education Section */}
+      {/* Education Section */}
       <section id="education" className="py-20 bg-white/5 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl font-bold text-center text-white mb-20 hover:scale-105 transition-transform duration-300">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Education</span>
             </h2>
             
-            <div className="space-y-12">
-              {education.map((edu, index) => (
-                <Card 
-                  key={edu.degree} 
-                  className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 animate-fade-in group hover:shadow-2xl hover:shadow-purple-500/10"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <CardHeader className="group-hover:bg-white/5 transition-colors duration-300">
+            <div className="space-y-8">
+              {education.map((edu) => (
+                <Card key={edu.degree} className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
+                  <CardHeader>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                      <CardTitle className="text-white text-2xl group-hover:text-purple-400 transition-colors duration-300">{edu.degree}</CardTitle>
-                      <div className="flex items-center text-blue-400 mt-2 md:mt-0 group-hover:scale-110 transition-transform duration-300">
-                        <Calendar className="w-5 h-5 mr-2" />
-                        <span className="text-base font-medium">{edu.period}</span>
+                      <CardTitle className="text-white text-xl">{edu.degree}</CardTitle>
+                      <div className="flex items-center text-blue-400 mt-2 md:mt-0">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        <span className="text-sm">{edu.period}</span>
                       </div>
                     </div>
-                    <div className="flex items-center text-white/80 mb-3 group-hover:text-white transition-colors">
-                      <GraduationCap className="w-5 h-5 mr-3 text-purple-400" />
-                      <span className="font-semibold text-lg">{edu.school}</span>
+                    <div className="flex items-center text-white/80 mb-2">
+                      <GraduationCap className="w-4 h-4 mr-2 text-purple-400" />
+                      <span className="font-semibold">{edu.school}</span>
                     </div>
-                    <div className="flex items-center text-white/60 group-hover:text-white/80 transition-colors">
-                      <MapPin className="w-5 h-5 mr-3" />
+                    <div className="flex items-center text-white/60">
+                      <MapPin className="w-4 h-4 mr-2" />
                       <span>{edu.location}</span>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-white/80 mb-6 leading-relaxed text-lg group-hover:text-white transition-colors duration-300">{edu.description}</p>
-                    <div className="space-y-3">
-                      <h4 className="text-white font-semibold text-lg group-hover:text-purple-400 transition-colors">Achievements:</h4>
-                      <div className="flex flex-wrap gap-3">
+                    <p className="text-white/80 mb-4 leading-relaxed">{edu.description}</p>
+                    <div className="mb-3">
+                      <h4 className="text-white font-medium mb-2">Achievements:</h4>
+                      <div className="flex flex-wrap gap-2">
                         {edu.achievements.map((achievement) => (
-                          <Badge key={achievement} className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-white border-purple-400/30 hover:from-blue-600/30 hover:to-purple-600/30 transition-all duration-300 hover:scale-110 cursor-pointer">
+                          <Badge key={achievement} className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-white border-purple-400/30">
                             {achievement}
                           </Badge>
                         ))}
@@ -392,43 +356,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Projects Section */}
+      {/* Projects Section */}
       <section id="projects" className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center text-white mb-20 hover:scale-105 transition-transform duration-300">
+          <h2 className="text-4xl font-bold text-center text-white mb-16">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Projects</span>
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {projects.map((project, index) => (
-              <Card 
-                key={project.title} 
-                className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl group overflow-hidden"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="relative overflow-hidden">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <Card key={project.title} className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors overflow-hidden">
+                <div className="relative">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-125"
+                    className="w-full h-48 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <div className="flex space-x-4">
-                      <Button size="sm" variant="ghost" className="text-white hover:text-blue-400 hover:bg-white/20 transform hover:scale-110 transition-all duration-300">
-                        <Github className="w-5 h-5 mr-2" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="flex space-x-3">
+                      <Button size="sm" variant="ghost" className="text-white hover:text-blue-400">
+                        <Github className="w-4 h-4 mr-2" />
                         Code
                       </Button>
-                      <Button size="sm" variant="ghost" className="text-white hover:text-purple-400 hover:bg-white/20 transform hover:scale-110 transition-all duration-300">
-                        <ExternalLink className="w-5 h-5 mr-2" />
+                      <Button size="sm" variant="ghost" className="text-white hover:text-purple-400">
+                        <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
                       </Button>
                     </div>
                   </div>
                 </div>
                 
-                <CardHeader className="group-hover:bg-white/5 transition-colors duration-300">
-                  <CardTitle className="text-white text-xl group-hover:text-blue-400 transition-colors duration-300">{project.title}</CardTitle>
-                  <CardDescription className="text-white/70 group-hover:text-white/90 transition-colors duration-300 text-base">
+                <CardHeader>
+                  <CardTitle className="text-white">{project.title}</CardTitle>
+                  <CardDescription className="text-white/70">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
@@ -436,7 +396,7 @@ const Index = () => {
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-400/10 transition-all duration-300 hover:scale-105 cursor-pointer">
+                      <Badge key={tech} variant="outline" className="border-blue-400/50 text-blue-400 hover:bg-blue-400/10 transition-colors">
                         {tech}
                       </Badge>
                     ))}
@@ -448,64 +408,61 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Contact Section */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 bg-white/5 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-5xl font-bold text-white mb-10 hover:scale-105 transition-transform duration-300">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-white mb-8">
               Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Connect</span>
             </h2>
-            <p className="text-2xl text-white/80 mb-16 hover:text-white transition-colors duration-300">
+            <p className="text-xl text-white/80 mb-12">
               Ready to work together? I'd love to hear about your next project!
             </p>
             
-            <div className="grid md:grid-cols-3 gap-10 mb-16">
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-110 group hover:shadow-2xl hover:shadow-blue-500/20">
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
                 <CardHeader className="text-center">
-                  <Mail className="w-16 h-16 text-blue-400 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
-                  <CardTitle className="text-white text-xl group-hover:text-blue-400 transition-colors">Email</CardTitle>
-                  <CardDescription className="text-white/70 group-hover:text-white transition-colors text-lg">
+                  <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                  <CardTitle className="text-white">Email</CardTitle>
+                  <CardDescription className="text-white/70">
                     john.developer@email.com
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-110 group hover:shadow-2xl hover:shadow-purple-500/20">
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
                 <CardHeader className="text-center">
-                  <Linkedin className="w-16 h-16 text-blue-400 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
-                  <CardTitle className="text-white text-xl group-hover:text-purple-400 transition-colors">LinkedIn</CardTitle>
-                  <CardDescription className="text-white/70 group-hover:text-white transition-colors text-lg">
+                  <Linkedin className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                  <CardTitle className="text-white">LinkedIn</CardTitle>
+                  <CardDescription className="text-white/70">
                     /in/johndeveloper
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-110 group hover:shadow-2xl hover:shadow-pink-500/20">
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
                 <CardHeader className="text-center">
-                  <Github className="w-16 h-16 text-blue-400 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
-                  <CardTitle className="text-white text-xl group-hover:text-pink-400 transition-colors">GitHub</CardTitle>
-                  <CardDescription className="text-white/70 group-hover:text-white transition-colors text-lg">
+                  <Github className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                  <CardTitle className="text-white">GitHub</CardTitle>
+                  <CardDescription className="text-white/70">
                     /johndeveloper
                   </CardDescription>
                 </CardHeader>
               </Card>
             </div>
             
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-110 transition-all duration-300 shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/40 text-lg px-8 py-4"
-            >
-              <Mail className="w-6 h-6 mr-3" />
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+              <Mail className="w-5 h-5 mr-2" />
               Send Message
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Footer */}
-      <footer className="py-12 border-t border-white/10 bg-white/5 backdrop-blur-sm">
+      {/* Footer */}
+      <footer className="py-8 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-white/60 text-lg hover:text-white/80 transition-colors duration-300">
+          <p className="text-white/60">
             © 2024 John Developer. Crafted with ❤️ and React
           </p>
         </div>
