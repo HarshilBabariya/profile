@@ -348,7 +348,7 @@ const Index = () => {
                     <div className="flex space-x-3">
                       <Button size="sm" variant="ghost" className="text-white hover:text-purple-400">
                         <a href={project.live} className="flex items-center gap-1">
-                        <ExternalLink className="w-4 h-4 mr-2" />
+                        <ExternalLink className="w-4 h-4" />
                         Live Demo
                         </a>
                       </Button>
