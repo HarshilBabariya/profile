@@ -47,79 +47,60 @@ const Index = () => {
   };
 
   const skills = [
-    'React', 'TypeScript', 'Node.js', 'Python', 'JavaScript', 'HTML/CSS',
-    'Git', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL', 'GraphQL'
+    'ReactJs', 'NextJs', 'NodeJs', 'Remix', 'Typescript', 'JavaScript', 'HTML/CSS',
+    'Git', 'MySQL', 'MongoDB', 'PostgreSQL'
   ];
 
   const experiences = [
     {
-      title: 'Senior Full Stack Developer',
-      company: 'TechCorp Solutions',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      description: 'Led development of scalable web applications using React and Node.js. Managed a team of 4 developers and improved application performance by 40%.',
-      technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'MongoDB']
+      title: 'Software Engineer',
+      company: 'Tatvasoft',
+      location: 'Ahmedabad, India',
+      period: '2023 - Present',
+      description: 'Led development of scalable web applications using ReactJs and NodeJs. Managed a team of 2 developers and improved application performances by using NextJs.',
+      technologies: ['ReactJs', 'NodeJs', 'NextJs', 'Remix', 'TypeScript', 'MySQL', 'PostgreSQL', 'MongoDB']
     },
     {
       title: 'Frontend Developer',
-      company: 'Digital Innovations Inc.',
-      location: 'Austin, TX',
-      period: '2020 - 2022',
+      company: 'Thinkbiz Technology Pvt Ltd.',
+      location: 'Ahmedabad, India',
+      period: '2022 - 2023',
       description: 'Developed responsive web applications and collaborated with UX/UI designers to create intuitive user interfaces. Implemented modern frontend architectures.',
-      technologies: ['React', 'JavaScript', 'CSS3', 'Redux', 'Jest']
-    },
-    {
-      title: 'Junior Web Developer',
-      company: 'StartupHub',
-      location: 'Remote',
-      period: '2019 - 2020',
-      description: 'Built and maintained company websites using modern web technologies. Contributed to open-source projects and gained experience in full-stack development.',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL']
+      technologies: ['ReactJs', 'Javascript', 'Typescript', 'HTML/CSS', 'Git']
     }
   ];
 
   const education = [
     {
-      degree: 'Master of Science in Computer Science',
-      school: 'Stanford University',
-      location: 'Stanford, CA',
-      period: '2017 - 2019',
-      description: 'Specialized in Software Engineering and Machine Learning. Graduated Magna Cum Laude with a GPA of 3.8/4.0.',
-      achievements: ['Dean\'s List', 'Research Assistant', 'Machine Learning Capstone Project']
+      degree: 'Bechlor Of Engineering',
+      school: 'Government Engineering College',
+      location: 'Rajkot, Gujarat',
+      period: '2018 - 2022',
+      description: 'Specialized in Computer Engineering. Active member of the Computer Science Club. Graduated with a CGPA of 8.32/10',
+      achievements: ['Bus Seat Booking System Project', 'Library Management System Project']
     },
-    {
-      degree: 'Bachelor of Science in Computer Engineering',
-      school: 'University of California, Berkeley',
-      location: 'Berkeley, CA',
-      period: '2013 - 2017',
-      description: 'Foundation in computer systems, programming, and software design. Active member of the Computer Science Club.',
-      achievements: ['Summa Cum Laude', 'Outstanding Student Award', 'Hackathon Winner']
-    }
   ];
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with React, Node.js, and Stripe integration',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      github: '#',
-      live: '#',
+      title: 'E-Commerce Pro',
+      description: 'Full-stack e-commerce solution with ReactJs, NodeJs, and Stripe integration to create multiple e-commerce websites from single website',
+      technologies: ['ReactJs', 'NodeJs', 'MySQL', 'Stripe', 'Typescript', 'Material-UI'],
+      live: 'https://ecomproduplicate-384812-react.b384812.dev.eastus.az.svc.builder.cafe/',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80'
     },
     {
       title: 'Task Management App',
       description: 'Collaborative task management tool with real-time updates and team features',
-      technologies: ['React', 'Firebase', 'TypeScript', 'Tailwind'],
-      github: '#',
-      live: '#',
+      technologies: ['ReactJs', 'Firebase', 'TypeScript', 'Ant Design', 'NodeJs', 'MongoDB', 'Socket.io'],
+      live: 'https://trello-clone-eta-ivory.vercel.app/',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80'
     },
     {
-      title: 'AI Dashboard',
-      description: 'Analytics dashboard with AI-powered insights and data visualization',
-      technologies: ['Next.js', 'Python', 'TensorFlow', 'D3.js'],
-      github: '#',
-      live: '#',
+      title: 'Day Docker',
+      description: 'Application to book a dock for parking a boat for vacations',
+      technologies: ['ReactJs', 'Material-UI', 'Socket.io', 'Typescript', 'Google-maps', 'Stripe'],
+      live: 'https://nathanrobinsonsbc-496588-react.b496588.dev.eastus.az.svc.builder.cafe/',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
     }
   ];
@@ -179,7 +160,7 @@ const Index = () => {
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              John <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Developer</span>
+              Harshil <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Babariya</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
               Full-Stack Developer & UI/UX Enthusiast
@@ -193,12 +174,8 @@ const Index = () => {
               <Button size="lg" onClick={() => scrollToSection('projects')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                 View My Work
               </Button>
-              <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')} className="border-white/30 text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')} className="border-white/30 hover:bg-white/10">
                 Get In Touch
-              </Button>
-              <Button size="lg" variant="ghost" className="text-white hover:bg-white/10">
-                <Download className="w-5 h-5 mr-2" />
-                Download CV
               </Button>
             </div>
           </div>
@@ -220,7 +197,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div className="space-y-6">
                 <p className="text-lg text-white/80 leading-relaxed">
-                  I'm a passionate full-stack developer with 5+ years of experience creating digital solutions that make a difference. 
+                  I'm a passionate full-stack developer with 3+ years of experience creating digital solutions that make a difference. 
                   I specialize in modern web technologies and love turning complex problems into simple, beautiful designs.
                 </p>
                 <p className="text-lg text-white/80 leading-relaxed">
@@ -230,11 +207,11 @@ const Index = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Award className="w-6 h-6 text-blue-400" />
-                    <span className="text-white">5+ Years Experience</span>
+                    <span className="text-white">3+ Years Experience</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Code className="w-6 h-6 text-purple-400" />
-                    <span className="text-white">50+ Projects Completed</span>
+                    <span className="text-white">20+ Projects Completed</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="w-6 h-6 text-pink-400" />
@@ -374,10 +351,6 @@ const Index = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-3">
-                      <Button size="sm" variant="ghost" className="text-white hover:text-blue-400">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
                       <Button size="sm" variant="ghost" className="text-white hover:text-purple-400">
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
@@ -425,7 +398,7 @@ const Index = () => {
                   <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                   <CardTitle className="text-white">Email</CardTitle>
                   <CardDescription className="text-white/70">
-                    john.developer@email.com
+                    harshilbabariya01@gmail.com
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -435,7 +408,7 @@ const Index = () => {
                   <Linkedin className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                   <CardTitle className="text-white">LinkedIn</CardTitle>
                   <CardDescription className="text-white/70">
-                    /in/johndeveloper
+                    /babariya-harshil
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -445,7 +418,7 @@ const Index = () => {
                   <Github className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                   <CardTitle className="text-white">GitHub</CardTitle>
                   <CardDescription className="text-white/70">
-                    /johndeveloper
+                    /HarshilBabariya
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -463,7 +436,7 @@ const Index = () => {
       <footer className="py-8 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white/60">
-            © 2024 John Developer. Crafted with ❤️ and React
+            © 2025 Harshil Babariya. Be Good and Code Clean
           </p>
         </div>
       </footer>
