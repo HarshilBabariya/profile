@@ -102,7 +102,28 @@ const Index = () => {
       technologies: ['ReactJs', 'Material-UI', 'Socket.io', 'Typescript', 'Google-maps', 'Stripe'],
       live: 'https://nathanrobinsonsbc-496588-react.b496588.dev.eastus.az.svc.builder.cafe/',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
-    }
+    },
+    {
+      title: 'NAHL',
+      description: 'Ice hockey gaming management system with building reports based on data incoming',
+      technologies: ['ReactJs', 'Material-UI', 'Socket.io', 'Typescript', 'Live Stream', 'PDF Generation'],
+      live: 'https://nahl.com/',
+      image: 'https://nahl.com//nahl/news/img/1213/front_56.jpg'
+    },
+    {
+      title: 'Well Spring',
+      description: 'Social application which helps user to reduce or remove bad habits from their routines',
+      technologies: ['ReactJs', 'Material-UI', 'Socket.io', 'Typescript', 'Class-based components'],
+      live: 'https://ws-459668-react.b459668.dev.eastus.az.svc.builder.cafe/',
+      image: 'https://media.istockphoto.com/id/1191644034/photo/girl-in-bright-clothes-refuses-junk-food-alcohol-and-cigarettes.jpg?s=612x612&w=0&k=20&c=sQ0vC8350ASF9JCmjDnu8QfJ7snI-HYnIW0hRRt5aiY='
+    },
+    {
+      title: 'Demand Management Systems',
+      description: 'Supply chain management system with features like requisitions, bid/supply source, contract management, workflow management, etc.',
+      technologies: ['ReactJs', 'Material-UI', 'Typescript', 'D3', 'Rich-text Editor'],
+      live: 'https://dev-scm-web.azurewebsites.net/',
+      image: 'https://www.nutrient.io/_astro/what-is-demand-management.BayeeARD_Z1uyqzO.webp'
+    },
   ];
 
   return (
@@ -208,10 +229,10 @@ const Index = () => {
                     <Code className="w-6 h-6 text-purple-400" />
                     <span className="text-white">20+ Projects Completed</span>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <a href="tel:+916353817930" className="flex items-center space-x-3">
                     <Phone className="w-6 h-6 text-pink-400" />
                     <span className="text-white">Available for Freelance</span>
-                  </div>
+                  </a>
                 </div>
               </div>
               
@@ -344,16 +365,16 @@ const Index = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  {project.live && <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-3">
                       <Button size="sm" variant="ghost" className="text-white hover:text-purple-400">
-                        <a href={project.live} className="flex items-center gap-1">
+                        <a href={project.live} target="_blank" className="flex items-center gap-2">
                         <ExternalLink className="w-4 h-4" />
                         Live Demo
                         </a>
                       </Button>
                     </div>
-                  </div>
+                  </div>}
                 </div>
                 
                 <CardHeader>
@@ -392,38 +413,46 @@ const Index = () => {
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
                 <CardHeader className="text-center">
-                  <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                  <CardTitle className="text-white">Email</CardTitle>
-                  <CardDescription className="text-white/70">
-                    harshilbabariya01@gmail.com
-                  </CardDescription>
+                  <a href="mailto:harshilbabariya01@gmail.com">
+                    <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                    <CardTitle className="text-white">Email</CardTitle>
+                    <CardDescription className="text-white/70">
+                      harshilbabariya01@gmail.com
+                    </CardDescription>
+                  </a>
                 </CardHeader>
               </Card>
               
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
                 <CardHeader className="text-center">
-                  <Linkedin className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                  <CardTitle className="text-white">LinkedIn</CardTitle>
-                  <CardDescription className="text-white/70">
-                    /babariya-harshil
-                  </CardDescription>
+                  <a href="https://www.linkedin.com/in/babariya-harshil/" target='_blank'>
+                    <Linkedin className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                    <CardTitle className="text-white">LinkedIn</CardTitle>
+                    <CardDescription className="text-white/70">
+                      /babariya-harshil
+                    </CardDescription>
+                  </a>
                 </CardHeader>
               </Card>
               
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
                 <CardHeader className="text-center">
-                  <Github className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                  <CardTitle className="text-white">GitHub</CardTitle>
-                  <CardDescription className="text-white/70">
-                    /HarshilBabariya
-                  </CardDescription>
+                  <a href="https://github.com/HarshilBabariya" target='_blank'>
+                    <Github className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                    <CardTitle className="text-white">GitHub</CardTitle>
+                    <CardDescription className="text-white/70">
+                      /HarshilBabariya
+                    </CardDescription>
+                  </a>
                 </CardHeader>
               </Card>
             </div>
             
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-              <Mail className="w-5 h-5 mr-2" />
-              Send Message
+              <a href="mailto:harshilbabariya01@gmail.com" className='flex items-center gap-2'>
+                <Mail className="w-5 h-5" />
+                Send Message
+              </a>
             </Button>
           </div>
         </div>
