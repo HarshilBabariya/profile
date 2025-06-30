@@ -154,11 +154,6 @@ const Index = () => {
           <div className={`transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                <User className="w-16 h-16 text-white" />
-              </div>
-            </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
               Harshil <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Babariya</span>
             </h1>
@@ -352,8 +347,10 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="flex space-x-3">
                       <Button size="sm" variant="ghost" className="text-white hover:text-purple-400">
+                        <a href={project.live}>
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
+                        </a>
                       </Button>
                     </div>
                   </div>
