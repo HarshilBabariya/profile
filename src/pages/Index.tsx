@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { ChevronDown, ExternalLink, Github, Linkedin, Mail, User, Code, Briefcase, Award } from 'lucide-react';
+import { ChevronDown, ExternalLink, Github, Linkedin, Mail, User, Code, Briefcase, Award, GraduationCap, MapPin, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -13,7 +12,7 @@ const Index = () => {
     setIsVisible(true);
     
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'experience', 'education', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       sections.forEach(section => {
@@ -40,6 +39,52 @@ const Index = () => {
   const skills = [
     'React', 'TypeScript', 'Node.js', 'Python', 'JavaScript', 'HTML/CSS',
     'Git', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL', 'GraphQL'
+  ];
+
+  const experiences = [
+    {
+      title: 'Senior Full Stack Developer',
+      company: 'TechCorp Solutions',
+      location: 'San Francisco, CA',
+      period: '2022 - Present',
+      description: 'Led development of scalable web applications using React and Node.js. Managed a team of 4 developers and improved application performance by 40%.',
+      technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'MongoDB']
+    },
+    {
+      title: 'Frontend Developer',
+      company: 'Digital Innovations Inc.',
+      location: 'Austin, TX',
+      period: '2020 - 2022',
+      description: 'Developed responsive web applications and collaborated with UX/UI designers to create intuitive user interfaces. Implemented modern frontend architectures.',
+      technologies: ['React', 'JavaScript', 'CSS3', 'Redux', 'Jest']
+    },
+    {
+      title: 'Junior Web Developer',
+      company: 'StartupHub',
+      location: 'Remote',
+      period: '2019 - 2020',
+      description: 'Built and maintained company websites using modern web technologies. Contributed to open-source projects and gained experience in full-stack development.',
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL']
+    }
+  ];
+
+  const education = [
+    {
+      degree: 'Master of Science in Computer Science',
+      school: 'Stanford University',
+      location: 'Stanford, CA',
+      period: '2017 - 2019',
+      description: 'Specialized in Software Engineering and Machine Learning. Graduated Magna Cum Laude with a GPA of 3.8/4.0.',
+      achievements: ['Dean\'s List', 'Research Assistant', 'Machine Learning Capstone Project']
+    },
+    {
+      degree: 'Bachelor of Science in Computer Engineering',
+      school: 'University of California, Berkeley',
+      location: 'Berkeley, CA',
+      period: '2013 - 2017',
+      description: 'Foundation in computer systems, programming, and software design. Active member of the Computer Science Club.',
+      achievements: ['Summa Cum Laude', 'Outstanding Student Award', 'Hackathon Winner']
+    }
   ];
 
   const projects = [
@@ -77,7 +122,7 @@ const Index = () => {
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold text-white">Portfolio</div>
             <div className="hidden md:flex space-x-8">
-              {['hero', 'about', 'projects', 'contact'].map((section) => (
+              {['hero', 'about', 'experience', 'education', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -190,6 +235,107 @@ const Index = () => {
                   </Badge>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">
+              Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Experience</span>
+            </h2>
+            
+            <div className="space-y-8">
+              {experiences.map((exp, index) => (
+                <Card 
+                  key={exp.title} 
+                  className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-all duration-500 transform hover:scale-105 animate-fade-in"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <CardHeader>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                      <CardTitle className="text-white text-xl">{exp.title}</CardTitle>
+                      <div className="flex items-center text-blue-400 mt-2 md:mt-0">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        <span className="text-sm">{exp.period}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center text-white/80 mb-2">
+                      <Briefcase className="w-4 h-4 mr-2 text-purple-400" />
+                      <span className="font-semibold">{exp.company}</span>
+                    </div>
+                    <div className="flex items-center text-white/60">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      <span className="text-sm">{exp.location}</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-white/80 mb-4 leading-relaxed">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-blue-400/50 text-blue-400">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-20 bg-white/5 backdrop-blur-sm">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Education</span>
+            </h2>
+            
+            <div className="space-y-8">
+              {education.map((edu, index) => (
+                <Card 
+                  key={edu.degree} 
+                  className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-all duration-500 transform hover:scale-105 animate-fade-in"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <CardHeader>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                      <CardTitle className="text-white text-xl">{edu.degree}</CardTitle>
+                      <div className="flex items-center text-blue-400 mt-2 md:mt-0">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        <span className="text-sm">{edu.period}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center text-white/80 mb-2">
+                      <GraduationCap className="w-4 h-4 mr-2 text-purple-400" />
+                      <span className="font-semibold">{edu.school}</span>
+                    </div>
+                    <div className="flex items-center text-white/60">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      <span className="text-sm">{edu.location}</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-white/80 mb-4 leading-relaxed">{edu.description}</p>
+                    <div className="space-y-2">
+                      <h4 className="text-white font-semibold">Achievements:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {edu.achievements.map((achievement) => (
+                          <Badge key={achievement} className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-white border-blue-400/30">
+                            {achievement}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
