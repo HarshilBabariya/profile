@@ -413,7 +413,7 @@ const Index = () => {
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
                 <CardHeader className="text-center">
-                  <a href="mailto:harshilbabariya01@gmail.com">
+                  <a href="mailto:harshilbabariya01@gmail.com?subject=Freelance Inquiry&body=Hi Harshil, I saw your portfolio and...">
                     <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                     <CardTitle className="text-white">Email</CardTitle>
                     <CardDescription className="text-white/70">
@@ -449,7 +449,7 @@ const Index = () => {
             </div>
             
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-              <a href="mailto:harshilbabariya01@gmail.com" className='flex items-center gap-2'>
+              <a href="mailto:harshilbabariya01@gmail.com?subject=Freelance Inquiry&body=Hi Harshil, I saw your portfolio and..." className='flex items-center gap-2'>
                 <Mail className="w-5 h-5" />
                 Send Message
               </a>
